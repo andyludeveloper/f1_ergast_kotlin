@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.andylu.f1_ergast_kotlin.model.API
+import com.andylu.f1_ergast_kotlin.model.Driver
 import com.andylu.f1_ergast_kotlin.service.F1ApiService
 import retrofit2.Call
 import retrofit2.Callback
@@ -24,14 +25,14 @@ class DriverViewModel : ViewModel() {
         loadData()
     }
 
-    private var _data = MutableLiveData<String>()
-    val data: LiveData<String> = _data
+    private var _data = MutableLiveData<List<Driver>>()
+    val data: LiveData<List<Driver>> = _data
 
     private fun loadData() {
         api.getData(10).enqueue(object : Callback<API> {
 
             override fun onResponse(call: Call<API>, response: Response<API>) {
-                _data.value = response.body()!!.toString()
+                _data.value = response.body()!!.mrData.driverTable.drivers
             }
 
             override fun onFailure(call: Call<API>, t: Throwable) {

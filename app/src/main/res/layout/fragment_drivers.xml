@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
+        <variable
+            name="adapter"
+            type="com.andylu.f1_ergast_kotlin.adapter.DriverAdapter" />
 
         <variable
             name="viewModel"
@@ -14,11 +19,12 @@
         android:layout_height="match_parent"
         tools:context=".DataFragment">
 
-        <TextView
-            android:id="@+id/text"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@{viewModel.data}" />
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:setAdapter="@{adapter}" />
 
     </FrameLayout>
 </layout>

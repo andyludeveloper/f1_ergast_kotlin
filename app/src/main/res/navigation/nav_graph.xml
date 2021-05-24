@@ -9,5 +9,5 @@
         android:id="@+id/dataFragment"
         android:name="com.andylu.f1_ergast_kotlin.fragment.DriverFragment"
         android:label="fragment_data"
-        tools:layout="@layout/fragment_data" />
+        tools:layout="@layout/fragment_drivers" />
 </navigation>
