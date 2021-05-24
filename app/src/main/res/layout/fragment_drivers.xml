@@ -8,10 +8,6 @@
         <variable
             name="adapter"
             type="com.andylu.f1_ergast_kotlin.adapter.DriverAdapter" />
-
-        <variable
-            name="viewModel"
-            type="com.andylu.f1_ergast_kotlin.viewmodel.DriverViewModel" />
     </data>
 
     <FrameLayout

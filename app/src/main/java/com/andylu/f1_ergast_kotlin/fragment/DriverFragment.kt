@@ -28,7 +28,6 @@ class DriverFragment : Fragment() {
         val driverAdapter = DriverAdapter()
         binding?.apply {
             lifecycleOwner = viewLifecycleOwner
-            viewModel = driverViewModel
             adapter = driverAdapter
             driverViewModel.data.observe(viewLifecycleOwner, {
                 it.let(driverAdapter::submitList)
