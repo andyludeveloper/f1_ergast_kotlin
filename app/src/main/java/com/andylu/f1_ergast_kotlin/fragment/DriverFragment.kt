@@ -9,7 +9,9 @@ import androidx.fragment.app.viewModels
 import com.andylu.f1_ergast_kotlin.adapter.DriverAdapter
 import com.andylu.f1_ergast_kotlin.databinding.FragmentDriversBinding
 import com.andylu.f1_ergast_kotlin.viewmodel.DriverViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DriverFragment : Fragment() {
     private var binding: FragmentDriversBinding? = null
     private val driverViewModel: DriverViewModel by viewModels()
